@@ -1,0 +1,50 @@
+
+body {
+    padding: 20px;
+    margin: auto;
+    text-align: center;
+}
+
+.board {
+    display: inline-block;
+    border: 2px solid #948f2f;
+
+}
+
+.row {
+    overflow-x: hidden;
+    vertical-align: top;
+}
+
+.row:nth-child(odd) > .cell:nth-child(odd) {
+    background: #948f2f;
+}
+
+.row:nth-child(even) > .cell:nth-child(even) {
+    background: #948f2f;
+}
+.cell {
+    width: 70px;
+    height: 70px;
+    display: inline-table;
+    margin: 2px;
+    background: lightsteelblue;
+    overflow: auto;
+    float: left; /*prevents headache zigzag*/
+}
+
+img {
+    width: 90%;
+    padding: 0;
+    margin: 0;
+}
+
+
+
+
+
+
+
+
+
+
