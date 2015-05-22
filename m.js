@@ -38,13 +38,24 @@ $(document).ready(function(){
     $(".row:nth-child(8) > .cell:nth-child(even)").append(images[0]);
 
     var carrying = false;
+    var from;
 
     $(".cell").click(function() {
         var id =  $(this).attr('id');
-        if (!carrying) { carrying = true; }
-        else {
-            
+        var kete_str =  $("#"+id+" > img").attr('src')+"";
+        var kete_type = (kete_str.contains('2')) ? 0 : 1;
+
+
+        if (!carrying) {
+            carrying = true;
+            from = id;
         }
+        else {
+            $("#"+from).empty();
+            $("#"+id).append(images[kete_type]);
+            carrying = false;
+        }
+        
         logbook.text("Clicked : "+id);
 
     });
@@ -54,6 +65,6 @@ $(document).ready(function(){
 });
 
 
-
+String.prototype.contains = function(it) { return this.indexOf(it) != -1; };
 
 
