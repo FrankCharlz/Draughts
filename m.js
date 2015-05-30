@@ -49,9 +49,9 @@ $(document).ready(function(){
             if (canDropHere(from, id, carried_kete_type, kete_type)) {
                 //if box empty drop the kete and is allowed to drop
                 removeKete(from);
-                putKete(id, carried_kete_type)
+                putKete(id, carried_kete_type);
                 carrying = false;
-                log("Move completed:")
+                log("Move completed:");
                 whose_turn = (whose_turn+1)%2;
             } else {
                 alert("You can not drop here fucker...");
@@ -143,19 +143,19 @@ function log(str) {
 }
 
 function fillKete() {
-    var r=0;
-    var c=0;
 
+    var r, c;
+    var cid;
     for (r=0; r<3; r++){
         for(c=r%2; c<8; c+=2) {
-            var cid = "cell_"+r+"_"+c;
+            cid = "cell_"+r+"_"+c;
             putKete(cid, 0);
         }
     }
 
     for (r=5; r<8; r++){
         for(c=r%2; c<8; c+=2) {
-            var cid = "cell_"+r+"_"+c;
+            cid = "cell_"+r+"_"+c;
             putKete(cid,1);
         }
     }
@@ -168,15 +168,15 @@ var Point = function (id) {
     this.cell= parseInt(id.charAt(7));
     this.isValid = function() {
         return ( (this.row + this.cell) & 1 == 0) ? true : false;
-    }
+    };
     this.keteType = function() {
         return getKeteType(id);
-    }
+    };
     this.getId = id;
     this.between = function(anotherId){
         var p = new Point(anotherId);
         var r = parseInt((this.row + p.row)/2);
         var c = parseInt((this.cell + p.cell)/2);
         return new Point("cell_"+r+"_"+c);
-    }
+    };
 }
