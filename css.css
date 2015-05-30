@@ -3,6 +3,7 @@ body {
     padding: 20px;
     margin: auto;
     text-align: center;
+    font-family: "segoe ui", Verdana, Sans-serif;
 }
 
 .board {
@@ -39,7 +40,17 @@ img {
     margin: 0;
 }
 
-
+.logbook {
+    display: inline-block;
+    position: absolute;
+    left: 0;
+    top: 0;
+    padding: 12px;
+    margin: 12px;
+    background: rgba(255, 181, 249, 0.29);
+    width: auto;
+    border: 2px solid #234231;
+}
 
 
 
